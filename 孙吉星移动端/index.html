@@ -1,0 +1,664 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>孙吉星移动端简历</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link href="animate.css" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+        body,html{
+            font-size: 100%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #main {
+            width: 640px;
+            height: 960px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #list > li {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #fff;
+            font-size: 1.8rem;
+            display: none;
+            text-align: center;
+            z-index: 5;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        #list > li.zIndex {
+            z-index: 6;
+        }
+
+        #list > li:nth-of-type(1) {
+            background: url("img/1.jpeg");
+            display: block;
+        }
+
+        .icon:nth-child(1) img {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            position: absolute;
+            left: 3.3rem;
+            top: 3.5rem;
+            margin-left: -1rem;
+        }
+
+        .icon:nth-child(1) {
+            -webkit-animation: bounce 3s infinite linear 0s both;
+            -o-animation: bounce 3s infinite linear 0s both;
+            animation: bounce 3s infinite linear 0s both;
+        }
+
+        #list > li:nth-of-type(2) {
+            background: url("img/timg.jpg");
+        }
+
+        #list > li:nth-of-type(3) {
+            background: url("img/23.jpg");
+        }
+
+        #list > li:nth-of-type(4) {
+            background: url("img/b3fb43166d224f4af245219d09f790529922d164.jpg");
+        }
+
+        #list > li:nth-of-type(5) {
+            background: url("img/b3fb43166d224f4af245219d09f790529922d164 (1).jpg");
+        }
+
+        /*音乐部分*/
+        #music {
+            height:0.4rem;
+            width: 0.4rem;
+            position: absolute;
+            right: 0.3rem;
+            top: 0.3rem;
+            background: url("file/music.svg") no-repeat;
+            background-size: 100%;
+            display: none;;
+            z-index: 100;
+        }
+
+        .musicMove {
+            -webkit-animation: musicMoveFrm 1s linear 0s infinite;
+            animation: musicMoveFrm 1s linear 0s infinite;
+            -moz-animation-fill-mode: both;
+        }
+
+        @-webkit-keyframes musicMoveFrm {
+            0% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes musicMoveFrm {
+            0% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        .ge {
+            width: 1.1rem;
+            height: 2.01rem;
+            position: absolute;
+            background: url("img/persum10.png") no-repeat;
+            background-size: 100%;
+            top: 7%;
+            left: 13%;
+            animation: flipInX 1s linear 0s both;
+        }
+
+        .ren {
+            width: 1.4rem;
+            height: 1.99rem;
+            position: absolute;
+            background: url("img/persum11.png") no-repeat;
+            background-size: 100%;
+            top: 12%;
+            left: 24%;
+            animation: flipInX 1s linear 0.5s both;
+            -webkit-animation: flipInX 1s linear 0.5s both;
+        }
+
+        .jian {
+            width: 1.33rem;
+            height: 2.01rem;
+            position: absolute;
+            background: url("img/persum12.png") no-repeat;
+            background-size: 100%;
+            top: 7%;
+            left: 44%;
+            animation: flipInX 1s linear 1s both;
+            -webkit-animation: flipInX 1s linear 1s both;
+        }
+
+        .li {
+            width: 1.33rem;
+            height: 1.95rem;
+            position: absolute;
+            top: 13%;
+            left: 66%;
+            background: url("img/persum13.png") no-repeat;
+            background-size: 100%;
+            animation: flipInX 1s linear 1.5s both;
+            -webkit-animation: flipInX 1s linear 1.5s both;
+        }
+
+        .a1 p:nth-child(6) {
+            font-size: 0.5rem;
+            font-weight: bold;
+            position: absolute;
+            top: 6.3rem;
+            left: 2.5rem;
+            animation: rotateInDownLeft .5s linear 1.5s both;
+            -webkit-animation: rotateInDownLeft .5s linear 1.5s both;
+        }
+
+        .a1 p:nth-child(7) {
+            font-size: 0.5rem;
+            font-weight: bold;
+            position: absolute;
+            top: 7rem;
+            left: 2.1rem;
+            animation: bounceInLeft .5s linear 1.5s both;
+            -webkit-animation: bounceInLeft .5s linear 1.5s both;
+        }
+
+        .a1 p:nth-child(8) {
+            font-size: 0.5rem;
+            font-weight: bold;
+            position: absolute;
+            top: 7.7rem;
+            left: 1.9rem;
+            animation: bounceInRight .5s linear 2.5s both;
+            -webkit-animation: bounceInRight .5s linear 2.5s both;
+        }
+
+        .a1 p:nth-child(9) {
+            font-size: 0.5rem;
+            font-weight: bold;
+            position: absolute;
+            top: 8.4rem;
+            left: 2rem;
+            animation: rotateInUpRight .5s linear 2.5s both;
+            -webkit-animation: rotateInUpRight .5s linear 2.5s both;
+        }
+
+        .a2 {
+            position: relative;
+        }
+        .a2 i{
+            display: inline-block;
+            width: 0.5rem;
+            height: 0.5rem;
+            position: absolute;
+z-index: 6;
+
+        }
+        .a2 i:nth-child(1) {
+                 background: url("img/css3.jpg");
+                 background-size: 100%;
+                 left: 0.5rem;
+                 top: 1.4rem;;
+            animation: bounceInLeft 0.5s linear 0.5 both;
+            -webkit-animation: bounceInLeft 0.5s linear 0.5 both;
+             }
+        .a2 i:nth-child(3) {
+            background: url("img/h5.jpg");
+            background-size: 100%;
+            left: 0.5rem;
+            top: 2.6rem;;
+            animation: bounceInLeft 0.7s linear 0.5 both;
+            -webkit-animation: bounceInLeft 0.7s linear 0.5 both;
+        }
+        .a2 i:nth-child(5) {
+            background: url("img/js.jpg");
+            background-size: 100%;
+            left: 0.5rem;
+            top: 3.95rem;;
+            animation: bounceInLeft 0.9s linear 0.5 both;
+            -webkit-animation: bounceInLeft 0.9s linear 0.5 both;
+        }
+        .a2 i:nth-child(7) {
+            background: url("img/jq.jpg");
+            background-size: 100%;
+            left: 0.5rem;
+            top: 5.23rem;;
+            animation: bounceInLeft 1.1s linear 0.5 both;
+            -webkit-animation: bounceInLeft 1.1s linear 0.5 both;
+        }
+        .a2 i:nth-child(9) {
+            background: url("img/git.jpg");
+            background-size: 100%;
+            left: 0.5rem;
+            top: 6.5rem;;
+            animation: bounceInLeft 1.3s linear 0.5 both;
+            -webkit-animation: bounceInLeft 1.3s linear 0.5 both;
+        }
+        .a2 p {
+            font-size: 0.3rem;;
+            margin-left: 2rem;
+            text-align: left;
+            line-height: 1.3rem;
+            text-shadow: 2px 4px 7px #ecebeb;
+
+        }
+        .a2 p:nth-child(2){
+            animation: flipInX .5s linear 1s both;
+            -webkit-animation: flipInX .5s linear 1s both;
+        }
+        .a2 p:nth-child(4){
+            animation: flipInX .7s linear 1s both;
+            -webkit-animation: flipInX .7s linear 1s both;
+        }
+        .a2 p:nth-child(6){
+            animation: flipInX .9s linear 1s both;
+            -webkit-animation: flipInX .9s linear 1s both;
+        }
+        .a2 p:nth-child(8){
+            animation: flipInX 1.1s linear 1s both;
+            -webkit-animation: flipInX 1.1s linear 1s both;
+        }
+        .a2 p:nth-child(10){
+            animation: flipInX 1.3s linear 1s both;
+            -webkit-animation: flipInX 1.3s linear 1s both;
+        }
+        .a2 p.fz{
+            margin:0;
+            font-size: 0.5rem;
+            text-align: center;
+            animation:zoomIn 1s linear 1.5s both;
+            -webkit-animation:zoomIn 1s linear 1.5s both;
+            color:red;
+        }
+        .a3 p{
+            font-size: 0.4rem;
+            line-height: 1.3rem;
+        }
+        .a3 p:nth-child(1){
+            font-weight: bold;
+            animation: zoomIn 0.5s linear 1s both;
+            -webkit-animation: zoomIn 0.5s linear 1s both;
+        }
+        .a3 p:nth-child(2){
+            font-size: 0.3rem;
+            font-weight: bold;
+            animation: zoomIn .8s linear 1s both;
+            -webkit-animation: zoomIn .8s linear 1s both;
+        }
+        .a3 p:nth-child(3){
+            font-weight: bold;
+            animation: zoomIn 1.1s linear 1s both;
+            -webkit-animation: zoomIn 1.1s linear 1s both;
+        }
+        .a3 p:nth-child(4){
+            font-size: 0.3rem;
+            font-weight: bold;
+            animation: zoomIn 1.4s linear 1s both;
+            -webkit-animation: zoomIn 1.4s linear 1s both;
+        }
+        .a3 p:nth-child(5){
+            font-weight: bold;
+            animation: zoomIn 1.7s linear 1s both;
+            -webkit-animation: zoomIn 1.7s linear 1s both;
+        }
+        .a3 p:nth-child(6){
+            font-size: 0.3rem;
+            font-weight: bold;
+            animation: zoomIn 2s linear 1s both;
+            -webkit-animation: zoomIn 2s linear 1s both;
+        }
+        .a3 p:nth-child(7){
+            font-weight: bold;
+            line-height: 0.8rem;
+        animation: zoomIn 2.3s linear 1s both;
+            -webkit-animation: zoomIn 2.3s linear 1s both;
+        }
+
+        .a4 p{
+            font-size: 0.25rem;
+            text-align: left;
+            text-shadow: 2px 4px 7px #ecebeb;
+            margin-left:2rem;
+            margin-top: 0.3rem;
+        }
+        .a4 div{
+            width: 0.3rem;
+            height:0.3rem;
+            background: url(img/persum32.png);
+            background-size:100%;
+            margin:0.3rem 0 0 1rem;
+            position: absolute;
+            animation: rubberBand 3s linear 0s infinite;
+            -webkit-animation: rubberBand 3s linear 0s infinite;
+        }
+        .a4 div.div1{
+            top: 1.7rem;
+            animation: rubberBand 3s linear 0s infinite;
+            -webkit-animation: rubberBand 3s linear 0s infinite;
+        }
+        #shangla{
+             width: 0.8rem;
+             height: 0.8rem;
+             position: absolute;
+             bottom: 0.5rem;
+             left: 3rem;
+             animation: rubberBand 3s linear 0s infinite;
+            -webkit-animation: rubberBand 3s linear 0s infinite;
+            z-index: 110;
+            background: url("img/persum32.png");
+            background-size: 100%;
+         }
+        p.p11{
+            animation: bounceInRight .5s linear 0s both;
+            -webkit-animation: bounceInRight .5s linear 0s both;
+        }
+        #a4>p:nth-of-type(1) {
+            animation: bounceInRight .5s linear 0.3s both;
+            -webkit-animation: bounceInRight .5s linear 0.3s both;
+        }
+        li div.a4 p.b1{
+            animation: bounceInRight .5s linear 0.6s both;
+            -webkit-animation: bounceInRight .5s linear 0.6s both;
+        }
+        .a4 p.b2{
+            animation: bounceInRight .5s linear 0.9s both;
+            -webkit-animation: bounceInRight .5s linear 0.9s both;
+        }
+        .a4 p.b3{
+            animation: bounceInRight .5s linear 1.2s both;
+            -webkit-animation: bounceInRight .5s linear 1.2s both;
+        }
+        .a4 p.b4{
+            animation: bounceInRight .5s linear 1.5s both;
+            -webkit-animation: bounceInRight .5s linear 1.5s both;
+        }
+        .a4 p.b5{
+            animation: bounceInRight .5s linear 1.8s both;
+            -webkit-animation: bounceInRight .5s linear 1.8s both;
+        }
+        .a4 p.b6{
+            animation: bounceInRight .5s linear 2.1s both;
+            -webkit-animation: bounceInRight .5s linear 2.1s both;
+        }
+        .a4 p.b7{
+            animation: bounceInRight .5s linear 2.4s both;
+            -webkit-animation: bounceInRight .5s linear 2.4s both;
+        }
+        .a5 p{
+            font-size: 0.35rem;
+            margin: 0.5rem 0 0 0;
+            font-weight: bold;
+        }
+        .a5 p:nth-child(1){
+            font-size: 0.4rem;
+            font-weight: bold;
+            text-shadow: 2px 4px 7px #ecebeb;
+            animation: bounceInDown .5s linear 0.5s both;
+            -webkit-animation: bounceInDown .5s linear 0.5s both;
+        }
+        .a5 p:nth-child(2){
+            animation: zoomIn 0.5s linear 0.5s both;
+            -webkit-animation: zoomIn 0.5s linear 0.5s both;
+        }
+        .a5 p:nth-child(3){
+            animation: zoomIn 0.5s linear 1s both;
+            -webkit-animation: zoomIn 0.5s linear 1s both;
+        }
+        .a5 p:nth-child(4){
+            animation: zoomIn 0.5s linear 1.5s both;
+            -webkit-animation: zoomIn 0.5s linear 1.5s both;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+<div id="main">
+    <ul id="list">
+        <li>
+            <div class="a1" id="a1">
+                <div class="icon" id="icon">
+                    <div><img src="img/头像.jpg" alt=""/></div>
+                </div>
+                <p class="ge"></p>
+                <p class="ren"></p>
+                <p class="jian"></p>
+                <p class="li"></p>
+                <p>孙吉星</p>
+                <p>年龄:23岁</p>
+                <p>烟台开发区人氏</p>
+                                  <p>web前端工程师</p>
+            </div>
+        </li>
+        <li>
+            <div class="a2">
+                <i></i><p>熟练使用css3</p>
+                <i></i><p>熟练使用HTML5</p>
+                <i></i><p>熟练使用JavaScript</p>
+                <i></i><p>熟练使用jQuery</p>
+                <i></i><p>熟练使用gitHub发布</p>
+                <p class="fz">随时可入职</p>
+                <p class="fz">期待加入您的公司</p>
+            </div>
+        </li>
+        <li>
+            <div class="a3">
+                <p>姓名:孙吉星</p>
+                <p>对一件事情有足够的耐心</p>
+                <p>年龄:23岁</p>
+                <p>正值花季少年,我有足够强大的上进心</p>
+                <p>学历:烟台大专</p>
+                <p>吃的苦中苦,方为人上人</p>
+                <p>一年半的工作经验,使我有了对工作认真的态度,以及对未来的展望.</p>
+            </div>
+        </li>
+        <li>
+            <div class="a4">
+                <div class="div1"></div>
+                <p class="p11">执着<br/>对产品的效果,体验有近乎强迫的执着</p>
+                <div></div>
+                <p class="b1">敏感<br/>对新技术拥有一定的好奇心</p>
+                <div></div>
+                <p class="b2">抗压<br/>缘由对美好向往,造就石头一般的抗压</p>
+                <div></div>
+                <p class="b3">阳光<br/>即使在搬运代码的时候,仍然心向阳光</p>
+                <div></div>
+                <p class="b4">坚毅<br/>坚信有始有终,才能方得始终</p>
+                <div></div>
+                <p class="b5">态度<br/>较好的时间观念,对待事情认真负责</p>
+                <div></div>
+                <p class="b6">学习<br/>有很强的独立思考学习能力</p>
+                <div></div>
+                <p class="b7">友好<br/>我很丑但我很温柔</p>
+            </div>
+        </li>
+        <li>
+            <div class="a5">
+                <p>谢谢欣赏!期待与贵公司的合作!</p>
+                <p>手机: 15589555075</p>
+                <p>QQ: 825561949</p>
+                <p>邮箱: 825561949@qq.com</p>
+                <div></div>
+            </div>
+        </li>
+
+    </ul>
+
+</div>
+<div id="shangla"></div>
+
+<div id="music"></div>
+<audio src="file/2.mp3" preload="none" loop id="audio1"></audio>
+</body>
+</html>
+<script>
+    var winW = document.documentElement.clientWidth;
+    var winH = document.documentElement.clientHeight;
+    var desW = 640;
+    var scale = 640 / 100;
+    if (winW > 640) {
+        winW = 640;
+    }
+    document.documentElement.style.fontSize = winW / scale + "px";
+
+
+    $(document).on('touchmove', function (ev) {
+        ev.preventDefault();
+    });
+    $(function () {
+        var $main = $('#main');
+        var $li = $('#list').find('>li');
+        var viewHeight = $(window).height();
+
+        $main.css({'height': viewHeight, 'width': '100%'});
+
+        //划动页面;
+        slidePage();
+        function slidePage() {
+            var startY = 0;
+            var step = 1 / 4;
+            var nowIndex = 0;
+            var nextorprevIndex = 0;
+            var bBtn = true;
+
+            //$li.css('backgroundPosition', (640 - nowViewWidth())/2 +'px 0');
+
+            $li.on('touchstart', function (ev) {
+                if (bBtn) {
+                    bBtn = false;
+                    var touch = ev.originalEvent.changedTouches[0];
+                    startY = touch.pageY;
+                    nowIndex = $(this).index();
+                    $li.on('touchmove.move', function (ev) {
+                        var touch = ev.originalEvent.changedTouches[0];
+                        $(this).siblings().hide();
+                        if (touch.pageY < startY) {   //↑
+                            nextorprevIndex = nowIndex == $li.length - 1 ? 0 : nowIndex + 1;
+                            $li.eq(nextorprevIndex).css('transform', 'translate(0,' +(( viewHeight + touch.pageY - startY )/100)+ 'rem)');
+
+                        }
+                        else {   //↓
+                            nextorprevIndex = nowIndex == 0 ? $li.length - 1 : nowIndex - 1;
+                            $li.eq(nextorprevIndex).css('transform', 'translate(0,' + (( -viewHeight + touch.pageY - startY )/100) + 'rem)');
+
+                        }
+                        $li.eq(nextorprevIndex).show().addClass('zIndex');
+
+                        $(this).css('transform', 'translate(0,' + (touch.pageY - startY) * step + 'px) scale(' + (1 - Math.abs((touch.pageY - startY)) * step / viewHeight ) + ')');
+
+                    });
+                    $li.on('touchend.move', function (ev) {
+                        var touch = ev.originalEvent.changedTouches[0];
+                        if (touch.pageY < startY) {   //↑
+                            $li.eq(nowIndex).css('transform', 'translate(0,' + ((-viewHeight * step)/100) + 'rem) scale(' + (1 - step) + ')');
+                        }
+                        else {  //↓
+                            $li.eq(nowIndex).css('transform', 'translate(0,' + ((viewHeight * step)/100) + 'rem) scale(' + (1 - step) + ')');
+                        }
+                        $li.eq(nowIndex).css('transition', '.3s');
+                        $li.eq(nextorprevIndex).css('transform', 'translate(0,0)');
+                        $li.eq(nextorprevIndex).css('transition', '.3s');
+                        $li.off('.move');
+                    });
+                }
+            });
+            $li.on('transitionEnd webkitTransitionEnd', function (ev) {
+                if (!$li.is(ev.target)) {
+                    return;
+                }
+
+                resetFn();
+            });
+            function resetFn() {
+                $li.css('transform', '');
+                $li.css('transition', '');
+                $li.eq(nextorprevIndex).removeClass('zIndex').siblings().hide();
+                bBtn = true;
+            }
+        }
+
+        function nowViewWidth() {
+            var w = 640 * viewHeight / 960;
+            w = w > 640 ? w : 640;
+            return w;
+        }
+
+        var cjAnimate = [
+            {
+                inAn: function () {
+                    var $img = $('.li1Child').find('>img');
+
+                    setTimeout(function () {
+                        $img.eq(1).attr('class', 'active');
+                        $('.li1_txt').animate({
+                            'opacity': 1
+                        });
+
+                    }, 100)
+                },
+                outAn: function () {
+                    var $img = $('.li1Child').find('>img');
+                    var $ballImg = $('#li1_ballImg img:gt(0)');
+                    $img.eq(1).attr('class', '');
+                    $('.li1_txt').animate({
+                        'opacity': 0
+                    }, function () {
+                        $('.p1_num1').addClass('animated bounceIn');
+                    });
+
+                }
+            },
+        ];
+        cjAnimate[0].outAn();
+        cjAnimate[0].inAn();
+    });
+    /*音乐*/
+    var audio1 = document.querySelector("#audio1"), musicBtn = document.querySelector("#music");
+    window.setTimeout(function () {
+        audio1.play();
+        audio1.addEventListener("canplay", function () { //当前可以播放音乐的行为
+            musicBtn.style.display = "block";
+            musicBtn.className = "musicMove"
+        }, false)
+        //这块应该写一个完整的单击行为,此时用touchend代替
+        musicBtn.addEventListener("touchend", function () {
+            if (audio1.paused) {  //当前处于暂停状态
+                audio1.play();
+                musicBtn.className = "musicMove";
+                return;
+            }
+            audio1.pause();
+            musicBtn.className = ""
+        })
+    }, 1000);
+</script>
+
